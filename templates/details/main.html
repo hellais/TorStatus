@@ -1,0 +1,173 @@
+<h1>Details for: <span id="relay_name"><%= relay.get('nickname') %></span></h1>
+<!-- div class="subnav">
+    <ul class="nav nav-pills">
+        <li><a href="#general">General</a></li>
+        <li><a href="#graphs">Graphs</a></li>
+        <li><a href="#misc">Misc</a></li>
+    </ul>
+</div-->
+
+<h2>General <small>overall information on the Tor relay</small></h2>
+<hr/>
+
+<div class="row">
+    <div class="span4">
+    <h3>Configuration</h3>
+    <dl>
+      <dt><span class="tip" data-content="This is the nickname that the Tor relay operator chose." data-original-title="Nickname">Nickname</span></dt>
+      <dd><%= relay.get('nickname') %></dd>
+
+      <dt><span class="tip" data-content="The IP address on which the Tor relay is listening for incomming connections" data-original-title="ORListenAddress">OR Addresses</span></dt>
+      <dd><%= relay.get('or_addresses') %></dd>
+
+      <dt><span class="tip" data-content="These are the contact details of the Tor relay operator" data-original-title="ContactInfo">Contact</span></dt>
+      <dd><%= relay.get('contact') %></dd>
+
+      <dt><span class="tip" data-content="Advertise this port to listen for connections from Tor clients and servers." data-original-title="ORPort">OR Port</span></dt>
+      <dd><%= relay.get('or_port') %></dd>
+
+      <dt><span class="tip" data-content="advertise the directory service on this port." data-original-title="DirPort">Dir Port</span></dt>
+      <dd><%= relay.get('dir_port') %></dd>
+
+      <dt>
+      <span class="tip" data-content="XXX" data-original-title="YYYY">Advertised Bandwidth</span>
+      </dt>
+      <dd><%= relay.get('bandwidth_hr') %></dd>
+      <dt><span class="tip" data-content="XXX" data-original-title="YYY">Exit Policy</span></dt>
+      <dd>
+      <pre><% _.each(relay.get('exit_policy'), function(line) { %>
+<%= $.trim(line) %><% }); %></pre>
+      </dd>
+    </dl>
+
+
+    </div>
+    <div class="span4">
+    <h3>Properties</h3>
+    <dl>
+
+    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Fingerprint</span></dt>
+    <dd><%= relay.get('fingerprint') %></dd>
+
+    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Flags</span></dt>
+    <dd><% _.each(relay.get('flags'), function(flag) { %>
+        <img class="inline" src="img/flags/<%= flag[1] %>.png">
+        <span class="inline"><%= flag[0] %></span>
+    <% }); %>
+    </dd>
+
+    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Country</span></dt>
+    <dd><%= relay.get('country') %></dd>
+
+    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Bad Exit</span></dt>
+    <dd><%= relay.get('badexit') %></dd>
+
+    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Last Restarted</span></dt>
+    <dd><%= relay.get('last_restarted') %></dd>
+
+    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Descriptor Published</span></dt>
+    <dd><%= relay.get('desc_published') %></dd>
+
+    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Platform</span></dt>
+    <dd><%= relay.get('platform') %></dd>
+
+    </dl>
+    </div>
+    <div class="span4">
+    <h3>Status</h3>
+
+    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Uptime</span></dt>
+    <dd><%= relay.get('uptime') %></dd>
+
+    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Running</span></dt>
+    <dd><%= relay.get('running') %></dd>
+
+    </div>
+</div>
+
+<div class="row">
+<h2>Graphs <small>Pretty graphs</small></h2>
+<hr/>
+    <ul class="thumbnails">
+        <li class="span6">
+          <div class="thumbnail">
+            <div id="days" class="graph">
+            <img src="img/no-data-available.png" alt="">
+            </div>
+            <div class="caption">
+              <h5>3 Days graph</h5>
+            </div>
+          </div>
+        </li>
+        <li class="span6">
+          <div class="thumbnail">
+
+            <div id="week" class="graph">
+            <img src="img/no-data-available.png" alt="">
+            </div>
+            <div class="caption">
+              <h5>1 Week graph</h5>
+            </div>
+          </div>
+        </li>
+      </ul>
+</div>
+
+<div class="row">
+    <ul class="thumbnails">
+        <li class="span6">
+          <div class="thumbnail">
+            <div id="month" class="graph">
+            <img src="img/no-data-available.png" alt="">
+            </div>
+            <div class="caption">
+              <h5>1 Month graph</h5>
+            </div>
+          </div>
+        </li>
+        <li class="span6">
+          <div class="thumbnail">
+
+            <div id="months" class="graph">
+            <img src="img/no-data-available.png" alt="">
+            </div>
+            <div class="caption">
+              <h5>3 Months graph</h5>
+            </div>
+          </div>
+        </li>
+      </ul>
+</div>
+
+<div class="row">
+    <ul class="thumbnails">
+        <li class="span6">
+          <div class="thumbnail">
+            <div id="year" class="graph">
+            <img src="img/no-data-available.png" alt="">
+            </div>
+            <div class="caption">
+              <h5>1 Year graph</h5>
+            </div>
+          </div>
+        </li>
+        <li class="span6">
+          <div class="thumbnail">
+            <div id="years" class="graph">
+            <img src="img/no-data-available.png" alt="">
+            </div>
+
+           <div class="caption">
+              <h5>5 Years graph</h5>
+            </div>
+          </div>
+        </li>
+      </ul>
+</div>
+
+<div class="row">
+<h2>Misc <small>unsorted other information</small></h2>
+<hr/>
+</div>
+
+

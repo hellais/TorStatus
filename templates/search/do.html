@@ -1,0 +1,100 @@
+<div class="results_box">
+<% if(!relays) {%>
+    <% if(error == 0) {%>
+    <div class="alert">
+        <strong>No Results found!</strong><p>
+    No Tor bridges or relays matched your query :(</p>
+    </div>
+    <% } else if (error == 1) {%>
+    <div class="alert alert-error">
+        <strong>Too many matches!</strong><p>The current version of Tor Status does
+    not support a result set greater than 40. This is due to some performance
+    issues in doing multiple parallel connections in javascript. Future versions
+    will hopefully manage to overcome this issue.</p>
+    </div>
+    <% } %>
+<% } else { %>
+<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="torstatus_results">
+	<thead>
+		<tr>
+			<th>Nickname</th>
+			<th>Bandwidth</th>
+			<th>Uptime</th>
+			<th>Country</th>
+			<th>IP</th>
+			<th>Flags</th>
+			<th>ORPort</th>
+			<th>DirPort</th>
+		</tr>
+	</thead>
+	<tbody>
+<% var i = 0; %>
+
+<% _.each(relays, function(relay) { %>
+		<% if (i % 2 == 0 ) { %>
+			<tr class="even">
+		<% } else { %>
+			<tr class="odd">
+		<% } %>
+			<td>
+            <a href="#details/<%= relay.get('fingerprint') %>">
+            <%= relay.get('nickname') %>
+            </a>
+            </td>
+			<td><span data-filter="<%= relay.get('bandwidth') %>"><%= relay.get('bandwidth_hr') %></td>
+			<td>
+            <span data-hidden="<%= relay.get('last_restarted') %>" title="<%= relay.get('uptime_hrfull') %>" data-filter="<%= relay.get('uptime') %>" class="uptime">
+            <%= relay.get('uptime_hr') %>
+            </span>
+            </td>
+			<td>
+            <% if ( relay.get('country')) { %>
+            <img class="inline country" title="<%= relay.get('countryname') %>" src="img/cc/<%= relay.get('country') %>.png"/>
+            <% } %>
+            </td>
+			<td><%= relay.get('or_addresses') %></td>
+			<td>
+            <% _.each(relay.get('flags'), function(flag) { %>
+            <img class="inline flags" rel="tooltip" src="img/flags/<%= flag[1] %>.png" title="<%= flag[0] %>"/>
+            <% }); %>
+            </td>
+			<td><%= relay.get('or_port') %></td>
+			<td><%= relay.get('dir_port') %></td>
+            </tr>
+	<% i += 1; %>
+<% }); %>
+	</tbody>
+	<tfoot>
+	<tr>
+		<th>
+            <input type="text" id="nickname" name="nickname" placeholder="Nickname" class="search_init">
+        </th>
+		<th>
+			<input type="text" id="bw_from" name="bw_from" placeholder="From (KB/s)" class="search_init span1"><input type="text" id="bw_to"name="bw_to" placeholder="To (KB/s)" class="search_init span1">
+		</th>
+		<th>
+			<input type="text" id="uptime_from" name="uptime_from" placeholder="From (days)" class="search_init span1">
+            <input type="text" id="uptime_to" name="uptime_to" placeholder="To (days)" class="search_init span1">
+		</th>
+	    <th>
+
+            <input type="text" id="country" name="country" placeholder="Country" class="search_init span1 typeahead">
+        </th>
+
+		<th>
+            <input type="text" id="or_address" name="or_address" placeholder="IP address" class="search_init">
+        </th>
+		<th>
+            <input type="text" id="flags" name="flags" placeholder="Flags" class="search_init">
+        </th>
+		<th>
+            <input type="text" id="or_port" name="or_port" placeholder="ORPort" class="search_init span1">
+        </th>
+		<th>
+            <input type="text" id="dir_port" name="dir_port" placeholder="DIRPort" class="search_init span1">
+        </th>
+	</tr>
+	</tfoot>
+</table>
+<% } %>
+</div>

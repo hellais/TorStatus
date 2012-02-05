@@ -1,0 +1,47 @@
+.graph {
+    width: 550px;
+    height: 362px;
+}
+
+.splash {
+    padding-top: 36px;
+    padding-bottom: 72px;
+    position: relative;
+}
+
+
+.splash h1 {
+    text-align: center;
+    font-size: 80px;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 18px;
+}
+
+.splash p {
+    margin-left: 5%;
+    margin-right: 5%;
+    line-height: 36px;
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.splash .learn-more {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.splash .learn-more {
+
+}
+
+#loading {
+    width: 24px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+

@@ -1,0 +1,65 @@
+<header id="about">
+<h1>Tor Status</h1>
+<p class="lead">
+Tor Status is a web application to discover Tor relays and bridges. It provides useful information on how relays are configured along with graphics about their past.
+</p>
+</header>
+
+<div class="page-header">
+<h1>Features</h1>
+</div>
+<div class="row">
+<div class="span4">
+<h2>Search and Filter</h2>
+<p>
+You are able to search for existing Tor relays by keywords. The results are displayed inside of tables that can be further refined with filters.
+</p>
+</div>
+
+<div class="span4">
+<h2>Discover</h2>
+<p>
+You are able to get a detailed view of how the relay is configured. What it's exit policy is and all the data that you would normally find in the descriptor.
+</p>
+</div>
+
+<div class="span4">
+<h2>Graphs</h2>
+<p>
+The historical data of the bridges bandwith usage is available in graph form.
+</p>
+</div>
+</div>
+
+<div class="page-header">
+<h1>Tecnologies</h1>
+</div>
+<div class="row">
+<div class="span4">
+<h2>Pure Client Side</h2>
+<p>
+This application is built in a way that all the logic is delegated to the client.
+This means that the amount of requests made to the server can be minimized and that
+this application can potentially run by being loaded locally. The server is only
+interrogated for JSON objects that do not manipulate the DOM of the page.
+</p>
+</div>
+
+<div class="span4">
+<h2>Libraries</h2>
+<p>
+Tor Status uses <a href="http://documentcloud.github.com/backbone/">Backbone.js</a> as an MV* framework, with <a href="http://requirejs.org/">require.js</a> for AMD loading of
+dependencies. <a href="http://jquery.com/">jQuery</a> and <a href="http://documentcloud.github.com/underscore/">Underscore.js</a> as JS utility libraries.
+<a href="http://datatables.net/">Datatables</a> for visualizing data in tabular form with custom filtering. <a href="http://code.google.com/p/flot/">Flot</a> for making pretty charts.
+<a href="http://twitter.github.com/bootstrap/">Bootstrap</a> as a CSS framework.
+</p>
+</div>
+
+<div class="span4">
+<h2>Open Source</h2>
+<p>
+All the code for this website is Open Source. It actually couldn't be otherwise since it is all being loaded into the browser ;). But it's also released under BSD 2 clause license.
+</p>
+</div>
+</div>
+
