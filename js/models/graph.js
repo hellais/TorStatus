@@ -20,6 +20,16 @@ define([
         lookup: function(fingerprint, options) {
             var model = this;
             var success = options.success;
+            // Clear the model
+            this.set({
+                days: {write: [], read: []},
+                week: {write: [], read: []},
+                month: {write: [], read: []},
+                months: {write: [], read: []},
+                year: {write: [], read: []},
+                years: {write: [], read: []}
+            });
+
             $.getJSON(this.baseurl+'/bandwidth/lookup/'+fingerprint, function(data) {
                 model.data = data;
                 success(model, data);
@@ -28,7 +38,7 @@ define([
 
         parsebwdata: function(data) {
             var model = this;
-            var relay = data.relays[0]
+            var relay = data.relays[0];
             this.fingerprint = relay.fingerprint;
             // Parse the write history of the relay
             var history = relay.write_history;
