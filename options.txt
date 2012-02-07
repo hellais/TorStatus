@@ -30,7 +30,6 @@
 <option value="bv">Bouvet Island</option>
 <option value="br">Brazil</option>
 <option value="io">British Indian Ocean Territory</option>
-<option value=""></option>
 <option value="bn">Brunei</option>
 <option value="bg">Bulgaria</option>
 <option value="bf">Burkina Faso</option>
@@ -50,11 +49,10 @@
 <option value="co">Colombia</option>
 <option value="km">Comoros</option>
 <option value="cd">Congo, The Democratic Republic of the</option>
-<option value=""></option>
 <option value="cg">Congo</option>
 <option value="ck">Cook Islands</option>
 <option value="cr">Costa Rica</option>
-<option value="ci">Côte d'Ivoire</option>
+<option value="ci">C&#244;te d'Ivoire</option>
 <option value="hr">Croatia</option>
 <option value="cu">Cuba</option>
 <option value="cy">Cyprus</option>
@@ -97,7 +95,6 @@
 <option value="gy">Guyana</option>
 <option value="ht">Haiti</option>
 <option value="hm">Heard Island and McDonald Islands</option>
-<option value=""></option>
 <option value="va">Vatican City</option>
 <option value="hn">Honduras</option>
 <option value="hk">Hong Kong</option>
@@ -146,7 +143,6 @@
 <option value="yt">Mayotte</option>
 <option value="mx">Mexico</option>
 <option value="fm">Micronesia, Federated States of</option>
-<option value=""></option>
 <option value="md">Moldova, Republic of</option>
 <option value="mc">Monaco</option>
 <option value="mn">Mongolia</option>
@@ -194,10 +190,9 @@
 <option value="mf">Saint Martin</option>
 <option value="pm">Saint Pierre and Miquelon</option>
 <option value="vc">Saint Vincent and the Grenadines</option>
-<option value=""></option>
 <option value="ws">Samoa</option>
 <option value="sm">San Marino</option>
-<option value="st">São Tomé and Príncipe</option>
+<option value="st">S&#227;o Tom&#233; and Pr&#237;ncipe</option>
 <option value="sa">Saudi Arabia</option>
 <option value="sn">Senegal</option>
 <option value="rs">Serbia</option>
@@ -209,8 +204,7 @@
 <option value="sb">Solomon Islands</option>
 <option value="so">Somalia</option>
 <option value="za">South Africa</option>
-<option value="gs">South Georgia and the South Sandwich </option>
-<option value="Islands"></option>
+<option value="gs">South Georgia and the South Sandwich Islands"></option>
 <option value="es">Spain</option>
 <option value="lk">Sri Lanka</option>
 <option value="sd">Sudan</option>
@@ -239,7 +233,6 @@
 <option value="ae">United Arab Emirates</option>
 <option value="gb">United Kingdom</option>
 <option value="um">United States Minor Outlying Islands</option>
-<option value=""></option>
 <option value="us">United States</option>
 <option value="uy">Uruguay</option>
 <option value="uz">Uzbekistan</option>
@@ -253,4 +246,3 @@
 <option value="ye">Yemen</option>
 <option value="zm">Zambia</option>
 <option value="zw">Zimbabwe</option>
-<option value=""></option>
