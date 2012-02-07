@@ -7,33 +7,30 @@
     </ul>
 </div-->
 
-<h2>General <small>overall information on the Tor relay</small></h2>
+<h2>General <small>Overall information on the Tor relay</small></h2>
 <hr/>
 
 <div class="row">
     <div class="span4">
     <h3>Configuration</h3>
     <dl>
-      <dt><span class="tip" data-content="This is the nickname that the Tor relay operator chose." data-original-title="Nickname">Nickname</span></dt>
+      <dt><span class="tip" data-content="Nickname that the Tor relay operator chose." data-original-title="Nickname">Nickname</span></dt>
       <dd><%= relay.get('nickname') %></dd>
 
-      <dt><span class="tip" data-content="The IP address on which the Tor relay is listening for incomming connections" data-original-title="ORListenAddress">OR Addresses</span></dt>
+      <dt><span class="tip" data-content="Addresses and ports where the relay listens for incoming connections from clients and other relays." data-original-title="Onion-routing addresses">OR Addresses</span></dt>
       <dd><%= relay.get('or_addresses') %></dd>
 
-      <dt><span class="tip" data-content="These are the contact details of the Tor relay operator" data-original-title="ContactInfo">Contact</span></dt>
+      <dt><span class="tip" data-content="Contact details of the Tor relay operator" data-original-title="Contact information">Contact</span></dt>
       <dd><%= relay.get('contact') %></dd>
 
-      <dt><span class="tip" data-content="Advertise this port to listen for connections from Tor clients and servers." data-original-title="ORPort">OR Port</span></dt>
-      <dd><%= relay.get('or_port') %></dd>
-
-      <dt><span class="tip" data-content="advertise the directory service on this port." data-original-title="DirPort">Dir Port</span></dt>
-      <dd><%= relay.get('dir_port') %></dd>
+      <dt><span class="tip" data-content="Address and port where the relay listens for directory requests." data-original-title="Directory port">Dir Address</span></dt>
+      <dd><%= relay.get('dir_address') %></dd>
 
       <dt>
-      <span class="tip" data-content="XXX" data-original-title="YYYY">Advertised Bandwidth</span>
+      <span class="tip" data-content="Bandwidth that the relay is willing and capable to provide." data-original-title="Advertised bandwidth">Advertised Bandwidth</span>
       </dt>
       <dd><%= relay.get('bandwidth_hr') %></dd>
-      <dt><span class="tip" data-content="XXX" data-original-title="YYY">Exit Policy</span></dt>
+      <dt><span class="tip" data-content="Policy of exit connections that the relay is going to accept or reject." data-original-title="Exit policy">Exit Policy</span></dt>
       <dd>
       <pre><% _.each(relay.get('exit_policy'), function(line) { %>
 <%= $.trim(line) %><% }); %></pre>
@@ -46,29 +43,29 @@
     <h3>Properties</h3>
     <dl>
 
-    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Fingerprint</span></dt>
+    <dt><span class="tip" data-content="20-byte unique identifier of the relay." data-original-title="Fingerprint">Fingerprint</span></dt>
     <dd><%= relay.get('fingerprint') %></dd>
 
-    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Flags</span></dt>
+    <dt><span class="tip" data-content="Flags that the directory authorities assigned to this relay." data-original-title="Relay flags">Flags</span></dt>
     <dd><% _.each(relay.get('flags'), function(flag) { %>
         <img class="inline" src="img/flags/<%= flag[1] %>.png">
         <span class="inline"><%= flag[0] %></span>
     <% }); %>
     </dd>
 
-    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Country</span></dt>
+    <dt><span class="tip" data-content="Country as found in a GeoIP database by resolving the relay's first onion-routing address." data-original-title="Country">Country</span></dt>
     <dd><%= relay.get('country') %></dd>
 
-    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Bad Exit</span></dt>
+    <dt><span class="tip" data-content="Whether this relay was marked as bad exit by the directory authorities." data-original-title="Bad exit">Bad Exit</span></dt>
     <dd><%= relay.get('badexit') %></dd>
 
-    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Last Restarted</span></dt>
+    <dt><span class="tip" data-content="Date and time when the relay was last (re-)started." data-original-title="Last restarted">Last Restarted</span></dt>
     <dd><%= relay.get('last_restarted') %></dd>
 
-    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Descriptor Published</span></dt>
+    <dt><span class="tip" data-content="Date and time when the relay last published a descriptor to the directory authorities." data-original-title="Descriptor published">Descriptor Published</span></dt>
     <dd><%= relay.get('desc_published') %></dd>
 
-    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Platform</span></dt>
+    <dt><span class="tip" data-content="Platform string of this relay containing operating system and Tor version details." data-original-title="Platform">Platform</span></dt>
     <dd><%= relay.get('platform') %></dd>
 
     </dl>
@@ -76,10 +73,10 @@
     <div class="span4">
     <h3>Status</h3>
 
-    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Uptime</span></dt>
+    <dt><span class="tip" data-content="Time since when this relay is online." data-original-title="Uptime">Uptime</span></dt>
     <dd><%= relay.get('uptime_hrfull') %></dd>
 
-    <dt><span class="tip" data-content="XXX" data-original-title="YYY">Running</span></dt>
+    <dt><span class="tip" data-content="Whether this relay is listed in the current Tor directory or not." data-original-title="YYY">Running</span></dt>
     <dd><%= relay.get('running') %></dd>
 
     </div>
@@ -165,9 +162,11 @@
       </ul>
 </div>
 
+<!--
 <div class="row">
 <h2>Misc <small>unsorted other information</small></h2>
 <hr/>
 </div>
+-->
 
 
