@@ -38,7 +38,7 @@
 		<% } %>
 			<td>
             <a href="#details/<%= relay.get('fingerprint') %>">
-            <%= relay.get('nickname') %>
+            <%= _.escape(relay.get('nickname')) %>
             </a>
             </td>
 			<td><span data-filter="<%= relay.get('bandwidth') %>"><%= relay.get('bandwidth_hr') %></td>

@@ -15,13 +15,13 @@
     <h3>Configuration</h3>
     <dl>
       <dt><span class="tip" data-content="This is the nickname that the Tor relay operator chose." data-original-title="Nickname">Nickname</span></dt>
-      <dd><%= relay.get('nickname') %></dd>
+      <dd><%= _.escape(relay.get('nickname')) %></dd>
 
       <dt><span class="tip" data-content="The IP address on which the Tor relay is listening for incomming connections" data-original-title="ORListenAddress">OR Addresses</span></dt>
       <dd><%= relay.get('or_addresses') %></dd>
 
       <dt><span class="tip" data-content="These are the contact details of the Tor relay operator" data-original-title="ContactInfo">Contact</span></dt>
-      <dd><%= relay.get('contact') %></dd>
+      <dd><%= _.escape(relay.get('contact')) %></dd>
 
       <dt><span class="tip" data-content="Advertise this port to listen for connections from Tor clients and servers." data-original-title="ORPort">OR Port</span></dt>
       <dd><%= relay.get('or_port') %></dd>
@@ -69,7 +69,7 @@
     <dd><%= relay.get('desc_published') %></dd>
 
     <dt><span class="tip" data-content="XXX" data-original-title="YYY">Platform</span></dt>
-    <dd><%= relay.get('platform') %></dd>
+    <dd><%= _.escape(relay.get('platform')) %></dd>
 
     </dl>
     </div>
