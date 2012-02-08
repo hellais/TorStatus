@@ -124,7 +124,9 @@ define([
         },
         lookup: function(options) {
             var success = options.success;
+            var error = options.error;
             var model = this;
+            console.log("doing query..");
             $.getJSON(this.baseurl+'/details/lookup/'+this.fingerprint, function(data) {
                 var relay = data.relays[0];
                 //console.log(data);
@@ -141,7 +143,7 @@ define([
                 relay.flags = model.parseflags(relay.flags, size);
                 model.set(relay, options);
                 success(model, relay);
-            });
+            }).error(function() {console.log("error...");error();});
         }
 
 	});

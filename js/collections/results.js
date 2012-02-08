@@ -21,13 +21,11 @@ define([
                     console.log('error..');
                     error(options.error, collection, options);
                 }
-
                 _.each(response.relays, function(relay, resultsC) {
                     crelay = new relayModel;
                     crelay.fingerprint = relay.f;
                     relays.push(crelay);
                 });
-
                 if (relays.length == 0) {
                     error(0);
                     console.log('error');
@@ -36,7 +34,6 @@ define([
                     error(1);
                     return false;
                 }
-
                 _.each(relays, function(relay) {
                     relay.lookup({
                         success: function(){
@@ -45,11 +42,14 @@ define([
                                 success(collection, relays);
                                 return relays;
                             }
+                        },
+                        error: function() {
+                            console.log("error in loading..");
+                            error(0);
                         }
                     });
                 });
-
-            });
+            }).error(function() {console.log("error in doing query..");error(2)});
         }
 
 	});

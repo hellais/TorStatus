@@ -13,6 +13,12 @@
     will hopefully manage to overcome this issue.</p>
     </div>
     <% } %>
+    <% } else if (error == 2) {%>
+    <div class="alert alert-error">
+        <strong>Backend error!</strong><p>The backend server replied with an error
+to your query. This probably means that you did not properly format your query. Or that you just are trying to fuzz my web app hoping to pwn me. Good luck! ;)</p>
+    </div>
+    <% } %>
 <% } else { %>
 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="torstatus_results">
 	<thead>
