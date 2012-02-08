@@ -8,6 +8,7 @@ define([
   'datatables',
   'tooltip',
   'helpers',
+  'collapse',
   'typeahead'
 ], function($, _, Backbone, resultsCollection, doSearchTemplate){
   var doSearchView = Backbone.View.extend({

@@ -3,7 +3,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/search/main.html'
+  'text!templates/search/main.html',
+  'collapse'
 ], function($, _, Backbone, mainSearchTemplate){
   var mainSearchView = Backbone.View.extend({
 	    el: $("#content"),

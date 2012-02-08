@@ -4,7 +4,7 @@
 }
 
 .splash {
-    padding-top: 36px;
+    padding-top: 56px;
     padding-bottom: 72px;
     position: relative;
 }
@@ -45,3 +45,6 @@
     padding-bottom: 100px;
 }
 
+.container #content {
+    padding-top: 60px;
+}

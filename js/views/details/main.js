@@ -10,6 +10,7 @@ define([
   'tooltip',
   'popover',
   'flot',
+  'collapse',
   'helpers'
 ], function($, _, Backbone, relayModel, graphModel, mainDetailsTemplate){
     var mainDetailsView = Backbone.View.extend({

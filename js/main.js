@@ -13,6 +13,7 @@ require.config({
     tooltip: 'libs/bootstrap/bootstrap-tooltip',
     typeahead: 'libs/bootstrap/bootstrap-typeahead',
     popover: 'libs/bootstrap/bootstrap-popover',
+    collapse: 'libs/bootstrap/bootstrap-collapse',
     flot: 'libs/flot/jquery.flot',
     templates: '../templates'
   }

@@ -6,6 +6,7 @@ define([
   'backbone',
   'text!templates/about.html',
   'popover',
+  'collapse',
   'tooltip'
 ], function($, _, Backbone, aboutTemplate){
     var aboutView = Backbone.View.extend({
