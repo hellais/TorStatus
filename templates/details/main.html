@@ -62,6 +62,10 @@
     <dt><span class="tip" data-content="Date and time when the relay was last (re-)started." data-original-title="Last restarted">Last Restarted</span></dt>
     <dd><%= relay.get('last_restarted') %></dd>
 
+    <dt><span class"tip" data-content="Other family members of this relay." data-original-title="Family Members">Family Members</span></dt>
+    <dd><pre><% _.each(relay.get('family'), function(member) { %><% var valid = member.match(RegExp("^\$[A-F0-9]{40}$")); %>
+<% if (valid) { %><a href="#details/<%= member.replace('$', '') %>"><% } %><%= member %><% if (valid) { %></a><% }}); %></pre></dd>
+
     <dt><span class="tip" data-content="Date and time when the relay last published a descriptor to the directory authorities." data-original-title="Descriptor published">Descriptor Published</span></dt>
     <dd><%= relay.get('desc_published') %></dd>
 
