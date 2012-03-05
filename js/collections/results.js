@@ -49,7 +49,24 @@ define([
                         }
                     });
                 });
-            }).error(function() {console.log("error in doing query..");error(2)});
+            }).error(
+                function(jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR);
+                if(jqXHR.statusText == "error") {
+                    error(2);
+                } else {
+                    error(3);
+                }
+                /*
+                console.log("jqXHR: " +
+                    jqXHR + " textStauts: " +
+                    textStatus + " errorThrown: " +
+                    errorThrown);
+                console.log("error in doing query..");
+                error(2)
+                */
+                }
+            );
         }
 
 	});
