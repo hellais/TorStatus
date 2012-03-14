@@ -15,6 +15,7 @@ require.config({
     popover: 'libs/bootstrap/bootstrap-popover',
     collapse: 'libs/bootstrap/bootstrap-collapse',
     flot: 'libs/flot/jquery.flot',
+    canvas2img: 'libs/flot/canvas2image',
     templates: '../templates'
   }
 

@@ -10,6 +10,7 @@ define([
   'tooltip',
   'popover',
   'flot',
+  'canvas2img',
   'collapse',
   'helpers'
 ], function($, _, Backbone, relayModel, graphModel, mainDetailsTemplate){
@@ -56,6 +57,8 @@ define([
                                 grid: { hoverable: true, clickable: true },
                                 xaxis: {mode: 'time', tickLength: 5},
                         });
+
+                        $("#save_"+g).attr('href', Canvas2Image.saveAsPNG($("#"+g+" > canvas.base")[0], false));
 
                         var previousItem = null;
                         $("#"+g).bind("plothover", function (event, pos, item){
