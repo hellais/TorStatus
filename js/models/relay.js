@@ -7,7 +7,7 @@ define([
 ], function($, _, Backbone){
 
 	var relayModel = Backbone.Model.extend({
-        baseurl: 'http://85.214.195.203',
+        baseurl: 'http://onionoo.torproject.org',
         fingerprint: '',
         parseflags: function(flags, size) {
             var output = [];

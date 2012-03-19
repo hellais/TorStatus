@@ -7,7 +7,7 @@ define([
 ], function($, _, Backbone, relayModel){
 	var resultsCollection = Backbone.Collection.extend({
 		model: relayModel,
-		baseurl: 'http://85.214.195.203/summary/search/',
+		baseurl: 'http://onionoo.torproject.org/summary/search/',
 		url: '',
 		lookup: function(options) {
             var success = options.success;

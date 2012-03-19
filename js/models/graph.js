@@ -6,7 +6,7 @@ define([
   'backbone'
 ], function($, _, Backbone){
     var graphModel = Backbone.Model.extend({
-        baseurl: 'http://85.214.195.203',
+        baseurl: 'http://onionoo.torproject.org',
         initialize: function() {
         this.set({
             days: {write: [], read: []},
