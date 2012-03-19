@@ -54,19 +54,20 @@ define([
 
                 _.each(history[period].values, function(value, i) {
                     y += history[period].interval*1000;
+                    var x = null
                     if (value != null) {
-                        var x = value*history[period].factor;
-
-                        // This is quite a hack to conform to backbone.js
-                        // funky way of setting and getting attributes in
-                        // models.
-                        // XXX probably want to refactor.
-                        var mperiod = period.split("_")[1]
-                        var newar = model.get(mperiod).write;
-                        newar.push([y,x]);
-                        var toset = {mperiod: {write: newar}};
-                        model.set(toset);
+                        x = value*history[period].factor;
                     }
+
+                    // This is quite a hack to conform to backbone.js
+                    // funky way of setting and getting attributes in
+                    // models.
+                    // XXX probably want to refactor.
+                    var mperiod = period.split("_")[1]
+                    var newar = model.get(mperiod).write;
+                    newar.push([y,x]);
+                    var toset = {mperiod: {write: newar}};
+                    model.set(toset);
                 });
             });
 
@@ -80,14 +81,15 @@ define([
                 var y = first.getTime();
                 _.each(history[period].values, function(value, i) {
                     y += history[period].interval*1000;
+                    var x = null
                     if (value != null) {
-                        var x = value*history[period].factor;
-                        var mperiod = period.split("_")[1]
-                        var newar = model.get(mperiod).read;
-                        newar.push([y,x]);
-                        var toset = {mperiod: {read: newar}};
-                        model.set(toset);
+                        x = value*history[period].factor;
                     }
+                    var mperiod = period.split("_")[1]
+                    var newar = model.get(mperiod).read;
+                    newar.push([y,x]);
+                    var toset = {mperiod: {read: newar}};
+                    model.set(toset);
                 });
             });
         }
