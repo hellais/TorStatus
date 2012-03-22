@@ -134,7 +134,8 @@ define([
                 relay.bandwidth = bw;
                 relay.family = relay.family ? relay.family : null;
                 relay.bandwidth_hr = hrBandwidth(bw);
-                relay.countryname = CountryCodes[relay.country.toLowerCase()];
+                relay.country = relay.country.toLowerCase();
+                relay.countryname = CountryCodes[relay.country];
                 relay.uptime = model.parsedate(relay.last_restarted);
                 relay.uptime_hr = relay.uptime.hr;
                 //console.log(relay.uptime.hrfull);
