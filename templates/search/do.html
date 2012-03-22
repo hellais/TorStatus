@@ -15,7 +15,10 @@
     <% } else if (error == 2) {%>
     <div class="alert alert-error">
         <strong>Backend error!</strong><p>The backend server replied with an error
-to your query. This probably means that you did not properly format your query. Or that you just are trying to fuzz my web app hoping to pwn me. Good luck! ;)</p>
+to your query. This probably means that you did not properly format your query.
+If your query was properly formatted it may mean that there is an issue with your browser/add-ons.
+Please report which browser/addons/etc. you're using to <a href="https://trac.torproject.org/projects/tor/newticket?component=Atlas">the bug tracker.</a>
+    </p>
     </div>
     <% } else if (error == 3) {%>
     <div class="alert alert-error">
