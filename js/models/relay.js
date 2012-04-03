@@ -19,8 +19,6 @@ define([
                 if (flag == "BadExit") {
                     model.set({badexit: true});
                     output.push([flag, "denied_"+size[0]]);
-                } else {
-                    model.set({badexit: false});
                 }
                 if (flag == "Fast") {
                     output.push([flag,"bolt_"+size[0]]);
@@ -143,6 +141,7 @@ define([
                 relay.countryname = CountryCodes[relay.country];
                 relay.uptime = model.parsedate(relay.last_restarted);
                 relay.uptime_hr = relay.uptime.hr;
+                model.set({badexit: false});
                 //console.log(relay.uptime.hrfull);
                 relay.uptime_hrfull = relay.uptime.hrfull;
                 relay.uptime = relay.uptime.millisecs;
