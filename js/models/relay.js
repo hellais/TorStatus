@@ -12,9 +12,15 @@ define([
         parseflags: function(flags, size) {
             var output = [];
             var model = this;
-            _.each(flags, function(flag, model) {
+            _.each(flags, function(flag) {
                 if (flag == "Authority") {
                     output.push([flag,"award_stroke_"+size[2]]);
+                }
+                if (flag == "BadExit") {
+                    model.set({badexit: true});
+                    output.push([flag, "denied_"+size[0]]);
+                } else {
+                    model.set({badexit: false});
                 }
                 if (flag == "Fast") {
                     output.push([flag,"bolt_"+size[0]]);
@@ -46,7 +52,6 @@ define([
                 if (flag == "Exit") {
                     output.push([flag,"cloud_download_"+size[0]]);
                 }
-
             });
             return output;
         },

@@ -57,6 +57,8 @@ define([
                                 grid: { hoverable: true, clickable: true },
                                 xaxis: {mode: 'time', tickLength: 5},
                         });
+                        $("#"+g).resize();
+
 
                         $("#save_"+g).attr('href', Canvas2Image.saveAsPNG($("#"+g+" > canvas.base")[0], false));
 
