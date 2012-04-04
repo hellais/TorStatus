@@ -60,6 +60,7 @@ define([
             var utct = t[1].split(":");
             var d = new Date(utcd[0], utcd[1]-1, utcd[2], utct[0], utct[1], utct[2]);
             var now = new Date();
+            now = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
             var diff = now-d;
             var secs = Math.round(diff/1000);
             var mins = Math.floor(secs/60);
