@@ -6,7 +6,7 @@ define([
   'views/details/main',
   'views/search/main',
   'views/search/do',
-  'views/about/main',
+  'views/about/main'
 ], function($, _, Backbone, mainDetailsView, mainSearchView, doSearchView, aboutView){
   var AppRouter = Backbone.Router.extend({
     routes: {
@@ -14,7 +14,6 @@ define([
     	'details/:fingerprint': 'mainDetails',
     	'search/:query': 'doSearch',
     	'about': 'showAbout',
-
     	// Default
     	'*actions': 'defaultAction'
     },
