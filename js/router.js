@@ -7,14 +7,16 @@ define([
   'views/search/main',
   'views/search/do',
   'views/about/main',
-], function($, _, Backbone, mainDetailsView, mainSearchView, doSearchView, aboutView){
+  'views/details/graph'
+], function($, _, Backbone, mainDetailsView, mainSearchView,
+            doSearchView, aboutView, showGraphView){
   var AppRouter = Backbone.Router.extend({
     routes: {
     	// Define the routes for the actions in Tor Status
     	'details/:fingerprint': 'mainDetails',
     	'search/:query': 'doSearch',
     	'about': 'showAbout',
-
+        'graph/:fingerprint': 'showGraph',
     	// Default
     	'*actions': 'defaultAction'
     },
@@ -37,6 +39,22 @@ define([
             }
         });
     },
+
+    // Display the bandwidth graph
+    showGraph: function(fingerprint){
+        console.log("starting it..");
+        $("#home").removeClass("active");
+        $("#about").removeClass("active");
+
+        $("#loading").show();
+        $("#content").hide();
+        showGraphView.graph.fingerprint = fingerprint;
+        $("#content").show();
+        showGraphView.render();
+        $("#loading").hide();
+
+    },
+
 
     // Perform a search on Tor Status
     doSearch: function(query){

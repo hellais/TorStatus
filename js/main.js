@@ -16,7 +16,8 @@ require.config({
     collapse: 'libs/bootstrap/bootstrap-collapse',
     flot: 'libs/flot/jquery.flot',
     canvas2img: 'libs/flot/canvas2image',
-    templates: '../templates'
+    templates: '../templates',
+    d3: 'libs/d3/d3.v2.js'
   }
 
 });

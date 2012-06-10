@@ -47,9 +47,10 @@ define([
                     graphs = ['days', 'week', 'month',
                             'months', 'year', 'years'];
                     _.each(graphs, function(g) {
+                        var plot_data = [{data: graph.get(g).write, label: 'write'},
+                                         {data: graph.get(g).read, label: 'read'}];
                         $.plot($("#"+g),
-                            [{data: graph.get(g).write, label: 'write'},
-                              {data: graph.get(g).read, label: 'read'}], {
+                            plot_data, {
                                 series: {
                                     lines: {show: true},
                                     points: {show: true},
@@ -57,6 +58,7 @@ define([
                                 grid: { hoverable: true, clickable: true },
                                 xaxis: {mode: 'time', tickLength: 5},
                         });
+                        console.log(plot_data);
                         $("#"+g).resize();
 
 
