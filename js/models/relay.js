@@ -131,7 +131,7 @@ define([
             var error = options.error;
             var model = this;
             console.log("doing query..");
-            $.getJSON(this.baseurl+'/details/lookup/'+this.fingerprint, function(data) {
+            $.getJSON(this.baseurl+'/details?lookup='+this.fingerprint, function(data) {
                 var relay = data.relays[0];
                 //console.log(data);
                 var bw = relay.advertised_bandwidth;

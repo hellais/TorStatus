@@ -30,7 +30,7 @@ define([
                 years: {write: [], read: []}
             });
 
-            $.getJSON(this.baseurl+'/bandwidth/lookup/'+fingerprint, function(data) {
+            $.getJSON(this.baseurl+'/bandwidth?lookup='+fingerprint, function(data) {
                 model.data = data;
                 success(model, data);
             });
